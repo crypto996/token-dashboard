@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 20% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 20% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 160 100% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 75%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 25%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 160 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-chart-bg text-foreground;
+  }
+}
+
+/* 自定义样式 */
+.price-up {
+  @apply text-price-up font-medium;
+}
+
+.price-down {
+  @apply text-price-down font-medium;
+}
+
+.bg-trading {
+  background-color: #0d1117;
+  background-image: linear-gradient(to bottom, rgba(30, 36, 48, 0.4) 1px, transparent 1px);
+  background-size: 100% 20px;
+}
+
+.border-highlight {
+  border: 1px solid #00FFCC;
+}
+
+.btn-highlight {
+  @apply bg-highlight text-background hover:bg-highlight/90 font-medium;
+}
+
+.progress-highlight {
+  @apply bg-highlight;
+}
+
+.progress-highlight-alt {
+  @apply bg-highlight-alt;
+}
+
+.card-trading {
+  @apply bg-card-bg border-chart-grid shadow-md;
+}
+
+.panel-trading {
+  @apply bg-panel-bg border-chart-grid shadow-md;
+}
+
+.title-highlight {
+  @apply text-highlight font-medium;
+}
+
+.title-highlight-alt {
+  @apply text-highlight-alt font-medium;
+}
+
+/* 自定义滑块样式 */
+.custom-slider {
+  @apply relative flex w-full touch-none select-none items-center;
+}
+
+.custom-slider .slider-track {
+  @apply relative h-2 w-full grow overflow-hidden rounded-full bg-secondary;
+}
+
+.custom-slider .slider-range {
+  @apply absolute h-full bg-highlight;
+}
+
+.custom-slider .slider-thumb {
+  @apply block h-5 w-5 rounded-full border-2 border-highlight bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+}
+
+/* FOMO指数滑块样式 */
+.fomo-slider .slider-range {
+  @apply bg-highlight-alt;
+}
+
+.fomo-slider .slider-thumb {
+  @apply border-highlight-alt;
+}
+
+/* 自定义进度条样式 */
+.custom-progress {
+  @apply relative h-2 w-full overflow-hidden rounded-full bg-secondary;
+}
+
+.custom-progress .progress-indicator {
+  @apply h-full w-full flex-1 bg-highlight transition-all;
+}
+
+/* FOMO指数进度条样式 */
+.fomo-progress .progress-indicator {
+  @apply bg-highlight-alt;
+}
+
+/* 范围标签样式 */
+.range-labels {
+  @apply flex justify-between mt-1 text-xs text-muted-foreground;
+}
+
+/* 表格样式 */
+.table-trading {
+  @apply border-separate border-spacing-0;
+}
+
+.table-trading th {
+  @apply bg-panel-bg text-muted-foreground font-medium text-xs uppercase tracking-wider;
+}
+
+.table-trading tr {
+  @apply border-b border-chart-grid;
+}
+
+.table-trading tr:hover {
+  @apply bg-secondary/10;
+}
+
+/* 标题样式 */
+.dashboard-title {
+  @apply text-3xl font-bold bg-gradient-to-r from-highlight to-highlight-alt bg-clip-text text-transparent;
+}
+
+.section-title {
+  @apply text-lg font-medium text-foreground;
+}
